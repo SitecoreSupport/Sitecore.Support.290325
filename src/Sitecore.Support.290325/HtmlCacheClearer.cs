@@ -75,15 +75,17 @@
       Item item2 = item;
       do
       {
-        if (MultisiteContext.GetSiteItem(item2) != null)
-        {
-          SiteInfo siteInfo = SiteInfoResolver.GetSiteInfo(item2);
-          if (siteInfo != null)
-          {
-            list.Add(siteInfo);
-            break;
-          }
-        }
+        #region Removed code
+        //if (MultisiteContext.GetSiteItem(item2) != null)
+        //{
+        //  SiteInfo siteInfo = SiteInfoResolver.GetSiteInfo(item2);
+        //  if (siteInfo != null)
+        //  {
+        //    list.Add(siteInfo);
+        //    break;
+        //  }
+        //}
+        #endregion
         ItemLink[] itemReferrers = Globals.LinkDatabase.GetItemReferrers(item2, false);
         foreach (ItemLink itemLink in itemReferrers)
         {
